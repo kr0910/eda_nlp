@@ -1,3 +1,21 @@
+## 日本語EDA
+### 使い方
+install
+```bash
+pip install mecab-python3
+```
+実行
+stopwordとwordnetは無ければカレントディレクトリにダウンロードされる  
+一行目にあるの列名を指定してその行だけaugmentationできる
+```bash
+python code/augment.py
+    --input=<insert input filename>
+    --stopword=<stopword filename>
+    --wordnet=<wordnet filename>
+    --aug_col=<column name>
+```
+
+
 # EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks
 [![Conference](http://img.shields.io/badge/EMNLP-2019-4b44ce.svg)](https://arxiv.org/abs/1901.11196)
 
