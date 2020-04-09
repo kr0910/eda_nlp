@@ -46,7 +46,7 @@ aug_col = ""
 if args.aug_col:
     aug_col = args.aug_col
     
-sep = ","
+sep = "¥t"
 if args.sep:
     sep = args.sep
 
@@ -60,7 +60,12 @@ def gen_eda(train_orig, output_file, stopword, wordnet, aug_col, sep, alpha, num
     for i, line in enumerate(lines):
 
         if i == 0 and aug_col:
-            col_names = line.strip().split(sep)
+            col_names = line.rstrip().split(sep)
+            print(line)
+            print(line.rstrip())
+            print(line.rstrip().split(sep))
+            print(line.rstrip().split(" "))
+            print(line.rstrip().split("¥t"))
             aug_col_index = col_names.index(aug_col)
             continue
         elif i == 0:

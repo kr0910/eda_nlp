@@ -21,7 +21,7 @@ class EDA():
 		self.p_rd=p_rd
 		self.num_aug=num_aug
 		if os.path.exists(sw_path):
-			print('File already exists.')
+			print('stopword File already exists.')
 		else:
 			print('Downloading...')
 			# Download the file from `url` and save it locally under `file_name`:
