@@ -13,7 +13,7 @@ ap.add_argument("--alpha", required=False, type=float, help="percent of words in
 ap.add_argument("--stopword", required=False, type=str, help="japanese_stop_words.txt")
 ap.add_argument("--wordnet", required=False, type=str, help="japanese_wordnet.db")
 ap.add_argument("--aug_col", required=False, type=str, help="augmentation column")
-ap.add_argument("--sep", required=False, type=str, help="setarator e.g.) , ¥t")
+ap.add_argument("--sep", required=False, type=str, help="setarator")
 args = ap.parse_args()
 
 #the output file
@@ -46,7 +46,7 @@ aug_col = ""
 if args.aug_col:
     aug_col = args.aug_col
     
-sep = "¥t"
+sep = "\t"
 if args.sep:
     sep = args.sep
 
@@ -61,11 +61,6 @@ def gen_eda(train_orig, output_file, stopword, wordnet, aug_col, sep, alpha, num
 
         if i == 0 and aug_col:
             col_names = line.rstrip().split(sep)
-            print(line)
-            print(line.rstrip())
-            print(line.rstrip().split(sep))
-            print(line.rstrip().split(" "))
-            print(line.rstrip().split("¥t"))
             aug_col_index = col_names.index(aug_col)
             continue
         elif i == 0:
