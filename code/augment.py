@@ -62,6 +62,7 @@ def gen_eda(train_orig, output_file, stopword, wordnet, aug_col, sep, alpha, num
         if i == 0 and aug_col:
             col_names = line.rstrip().split(sep)
             aug_col_index = col_names.index(aug_col)
+            writer.write(line)
             continue
         elif i == 0:
             aug_col_index = 0
