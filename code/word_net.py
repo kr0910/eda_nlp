@@ -73,7 +73,7 @@ class WordNet():
         ## only japanese
         flatten = lambda x: [z for y in x for z in (flatten(y) if hasattr(y, '__iter__') and not isinstance(y, str) else (y,))]
         synonym_unique = list(set(flatten(list(synonym.values()))))
-        print("{} -> {}".format(word, synonym_unique))
+        #Sprint("{} -> {}".format(word, synonym_unique))
         return synonym_unique
 
 

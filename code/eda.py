@@ -23,7 +23,7 @@ class EDA():
 		if os.path.exists(sw_path):
 			print('stopword File already exists.')
 		else:
-			print('Downloading...')
+			print('Downloading stopword file...')
 			# Download the file from `url` and save it locally under `file_name`:
 			url = 'http://svn.sourceforge.jp/svnroot/slothlib/CSharp/Version1/SlothLib/NLP/Filter/StopWord/word/Japanese.txt'
 			urllib.request.urlretrieve(url, sw_path)

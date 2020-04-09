@@ -71,6 +71,8 @@ def gen_eda(train_orig, output_file, stopword, wordnet, aug_col, sep, alpha, num
         for aug_sentence in aug_sentences:
             parts[aug_col_index] = aug_sentence
             writer.write(sep.join(parts) + '\n')
+        if i % 1000 == 0:
+            print("{}/{}".format(i, len(lines)))
 
     writer.close()
     print("generated augmented sentences with eda for " + train_orig + " to " + output_file + " with num_aug=" + str(num_aug))
